@@ -28,8 +28,8 @@ router.get('/', function (req, res, next) {
 });
 
 router.post('/', upload.single('avatar'), function (req, res, next) {
-    // req.body will hold the text fields, if there were any
-    res.send(`Zure izena:${req.body.name}. Fitxategia: ${req.file.filename}`);
+  // req.body will hold the text fields, if there were any
+  res.send(`Zure izena: ${req.body.name}. Fitxategia: <a href="http://localhost:3000/uploads/${req.file.filename}">http://localhost:3000/uploads/${req.file.filename}</a>`);
 })
 
 
