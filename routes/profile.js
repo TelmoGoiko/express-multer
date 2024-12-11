@@ -2,7 +2,6 @@ var express = require('express');
 var router = express.Router();
 const multer = require('multer')
 const path = require('path')
-const uploadDir = 'public/uploads/';
 
 // Multer storage konfigurazioa
 const storage = multer.diskStorage({
@@ -29,9 +28,8 @@ router.get('/', function (req, res, next) {
 });
 
 router.post('/', upload.single('avatar'), function (req, res, next) {
-    console.log(req.file)
     // req.body will hold the text fields, if there were any
-    res.send(`Zure izena:${req.body.izena}. Fitxategia: ${req.file.filename}`);
+    res.send(`Zure izena:${req.body.name}. Fitxategia: ${req.file.filename}`);
 })
 
 
